@@ -1,0 +1,152 @@
+@use "_base"
+@use "_variables"
+@use "_header"
+@use "_footer"
+// seccion  primera
+.seccion__primera
+    margin: 0
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: repeat(3, 1fr)
+    grid-template-areas: "logo" "titulo" "imagen"
+    &-fondo-logo
+        background-color: variables.$color-rosa
+        height: 100%
+        grid-area: logo
+        display: flex
+        align-items: center
+        flex-direction: column
+        justify-content: center
+        flex-wrap: wrap
+        .seccion__primera-container
+            width: 13rem
+            .seccion__image
+                margin: 0 auto
+    &-imagen
+        background-color: variables.$color-beig
+        grid-area: imagen
+        display: flex
+        align-items: center
+        flex-direction: column
+        justify-content: center
+        flex-wrap: wrap
+        .container-image
+            width: 15rem
+            .image
+                margin: 0 auto
+.container__titulo
+    background-color: variables.$color-azul
+    grid-area: titulo
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+    .titulo
+        color: variables.$color-blanco
+        text-align: center
+        font-weight: 500
+        font-size: 5rem
+        margin: 0
+        padding:
+            top: 1rem
+            bottom: 1rem
+        box-sizing: border-box
+        .salto-linia::before
+            content: '\A'
+            white-space: pre
+
+//Seccion Segunda
+.seccion__presentacion
+    background-color: variables.$color-rojo
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: repeat(2, 1fr)
+    grid-template-areas: "nombre" "profesion"
+    width: 100%
+    & > .container__primero
+        grid-area: nombre
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+        padding: variables.$global--xs
+        box-sizing: border-box
+    &-nombre
+        color: variables.$color-blanco
+        text-align: center
+        font-weight: 300
+        font-size: variables.$tipo--l
+        margin: 0
+        .salto-linia::before
+            content: '\A'
+            white-space: pre
+    & > .container__segundo
+        grid-area: profesion
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+        padding: variables.$global--xs
+        box-sizing: border-box
+    &-profesion
+        grid-area: profesion
+        color: variables.$color-blanco
+        text-align: center
+        font-weight: 300
+        font-size: variables.$tipo--l
+        margin: 0
+        .salto-linia::before
+            content: '\A'
+            white-space: pre
+
+//Seccion 3a
+.seccion__imagenes
+    display: none
+
+//Seccion 4t
+.seccion__sobre-mi
+    background-color: variables.$color-beig
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    flex-wrap: wrap
+    justify-content: center
+    align-content: center
+    padding: 30px
+    box-sizing: border-box
+    & > .button
+        background-color: variables.$color-azul
+        padding: 10px 20px
+        border-radius: 30px
+        & > .link
+            text-decoration: none
+            color: variables.$color-blanco
+            text-align: center
+            font-weight: 400
+            font-size: variables.$tipo--s
+
+.seccion__sobre-mi-titulo
+    display: flex
+    flex-wrap: wrap
+    color: variables.$color-rojo
+    text-align: center
+    font-weight: 400
+    font-size: variables.$tipo-xxxl
+    margin: 0
+.container__presentacion
+    width: 15rem
+.seccion__sobre-mi-presentacion
+    color: variables.$color-rojo
+    text-align: justify
+    font-weight: 400
+    font-size: 1rem
+
+//Seccion 5a y ultima
+.seccion__ultima
+    background-color: variables.$color-rosa
+    display: flex
+    width: 100%
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+    padding: 20px
+    box-sizing: border-box

@@ -1,0 +1,153 @@
+@use "_base"
+@use "_variables"
+@use "_header"
+@use "_footer"
+
+//Seccion Principal
+
+.hero__contact
+    background-color: variables.$color-rosa
+    width: 100%
+    .hero__container-contact
+        display: grid
+        grid-template-columns: 1fr
+        grid-template-rows: repeat(3, auto)
+        grid-template-areas: "titulo" "subtitulo" "formulario"
+        justify-items: center
+        align-items: center
+        justify-content: center
+        align-content: center
+    .hero__text-contact
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        justify-content: center
+        align-items: center
+    .hero__titulo-contact
+        grid: titulo
+        color: variables.$color-blanco
+        font-size: 3rem
+        font-weight: 300
+        text-align: center
+        margin: 0
+        .salto-linia::before
+            content: '\A'
+            white-space: pre
+    .hero__subtitulo-contact
+        color: variables.$color-blanco
+        font-size: 1.5rem
+        font-weight: 300
+    .hero__form-contact
+        grid: formulario
+        align-items: center
+        width: 100%
+    .container__image
+        display: none
+.container__form
+    background-color: variables.$color-azul
+    border-radius: 5rem 0 5rem 0
+    margin: 0
+    box-sizing: border-box
+.form
+    display: grid
+    grid-template-rows: repeat(6, auto)
+    grid-template-areas: "nombre" "apellidos" "telefono" "mail" "mensaje" "boton"
+    gap: 1rem
+    justify-content: space-evenly
+    justify-items: center
+    align-items: center
+
+    & > .nombre
+        grid: nombre
+        justify-self: center
+        color: variables.$color-blanco
+        font-size: variables.$tipo--s
+        & > input
+            border: none
+            border-radius: 30px
+            width: 10rem
+            padding: 10px
+            margin: 1rem
+            &:focus
+                border: 3px solid variables.$color-rosa
+                outline: none
+    & > .apellidos
+        grid: apellidos
+        justify-self: center
+        color: variables.$color-blanco
+        font-size: variables.$tipo--s
+        text-align: center
+        & > input
+            border: none
+            border-radius: 30px
+            width: 10rem
+            padding: 10px
+            margin: 1rem
+            &:focus
+                border: 3px solid variables.$color-rosa
+                outline: none
+    & > .mail
+        grid: mail
+        justify-self: center
+        color: variables.$color-blanco
+        font-size: variables.$tipo--s
+        text-align: center
+        & > input
+            border: none
+            border-radius: 30px
+            width: 10rem
+            padding: 10px
+            margin: 1rem
+            &:focus
+                border: 3px solid variables.$color-rosa
+                outline: none
+    & > .mensaje
+        grid: mensaje
+        color: variables.$color-blanco
+        font-size: variables.$tipo--s
+        text-align: center
+    & > .politica-legal
+        padding: 10px
+        color: variables.$color-blanco
+        text-align: center
+        .politica-legal__link
+            text-decoration: none
+            color: variables.$color-rosa
+
+.mensaje--centrar
+    display: flex
+    ign-items: center
+    justify-content: space-evenly
+.textarea
+    border: none
+    border-radius: 20px
+    width: 10rem
+    padding: 5px
+    margin: 1rem
+    &:focus
+        border: 3px solid variables.$color-rosa
+        outline: none
+.obligatorio:before
+    content: '*'
+    color: red
+
+.button__submit
+    grid: boton
+    background-color: variables.$color-rosa
+    padding: 7px 15px
+    color: variables.$color-blanco
+    border: none
+    border-radius: 30px
+    font-weight: 500
+    font-size: .8rem
+    text-transform: uppercase
+    margin-block: 10px
+.contacto__seccion-final
+    background-color: variables.$color-rojo
+    display: flex
+    width: 100%
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+    padding: 20px
+    box-sizing: border-box

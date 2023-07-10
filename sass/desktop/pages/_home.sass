@@ -1,0 +1,238 @@
+@use "_base"
+@use "_variables"
+@use "vendors/_animacionTituloHome-Contacta"
+@use "_extend"
+@use "_header"
+@use "_footer"
+
+#color__body
+    background-color: #d9d9d9
+
+.hero
+    background-image: url("../img/fondo.webp")
+    background-size: cover
+    background-repeat: no-repeat
+    background-attachment: fixed
+
+.hero__container-home
+    display: grid
+    grid-template-columns: 10rem auto
+    grid-template-rows: 1fr
+    gap: variables.$gap--m
+    align-items: center
+
+.hero__glass
+    max-width: 100vw
+    height: 80vh
+    padding: 50px
+    grid-column: 2
+    grid-row: 1 / 2
+    margin: 30px
+    box-sizing: border-box
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.191)
+    background-color: rgba(153, 135, 227, 0.321)
+    border-radius: 30px
+    position: relative
+    backdrop-filter: blur(100px)
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    flex-wrap: wrap
+    .hero__image
+        width: 30rem
+.hero__scroll
+    grid-column: 2
+    padding: 10px
+    width: 2rem
+    margin-bottom: 0
+    display: flex-inline
+    margin: 0 auto
+.hero_columna
+    grid-column: 1
+    grid-row: 1 / 2
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    align-content: center
+// Redes 
+.hero__redes
+    grid-column: 1
+    width: fit-content
+    margin: 0 auto
+    ul
+        padding: 0
+        list-style: none
+    .redes__contendor
+        width: fit-content
+    .redes__imagen
+        margin: 0 auto
+        width: variables.$global-xxxl
+    .redes__imagen:hover
+        scale: 130%
+
+    /*linia*/
+.linia-primera
+    @extend .linia__vertical-home
+
+.linia-segunda
+    @extend .linia__vertical-home
+
+//Seccion Segunda
+.seccion__segunda-home
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-template-rows: auto
+    grid-template-areas: "tarjeta-primera tarjeta-segunda tarjeta-tercera tarjeta-cuarta"
+    gap: variables.$gap--s
+    background-color: variables.$color-blanco
+.container__tarjeta
+    grid-area: tarjeta-primera
+    @extend .tarjetas__home
+.container__tarjeta-dos
+    grid-area: tarjeta-segunda
+    @extend .tarjetas__home
+    & > .container__image
+        width: 5rem
+.container__tarjeta-tres
+    grid-area: tarjeta-tercera
+    @extend .tarjetas__home
+.container__tarjeta-cuatro
+    grid-area: tarjeta-cuarta
+    @extend .tarjetas__home
+
+// Seccion Tercera
+
+.seccion__tercera-home
+    background-color: variables.$color-rojo
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: 1fr
+    justify-items: center
+    align-items: center
+    justify-content: center
+    align-content: center
+    padding: 20px
+    & > .carrusel-home
+        grid-column: 2
+        grid-row: 1 / 2
+.swiper
+    width: 25rem
+    height: 35rem
+
+.container__texto-home
+    grid-column: 1
+    display: flex
+    flex-direction: column
+    align-items: center
+    flex-wrap: wrap
+    & > .titulo
+        grid-row: 1
+        color: variables.$color-blanco
+        font-size: 7rem
+        text-align: center
+        font-weight: 300
+        text-transform: uppercase
+    & > .link-home
+        grid-row: 2
+        padding: 10px 20px
+        background-color: variables.$color-beig
+        border-radius: 30px
+        text-decoration: none
+        font-size: 1rem
+        color: variables.$color-rojo
+.link-home:hover
+    background-color: variables.$color-rosa
+    color: variables.$color-blanco
+
+//Seccion Cuarta
+.seccion__cuarta-home
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: 1fr
+    & >.sobre-mi__home
+        grid-column: 1
+        background-color: variables.$color-rosa
+        padding: 20px
+        display: flex
+        flex-direction: column
+        align-items: center
+        flex-wrap: wrap
+        justify-content: center
+        & > .titulo
+            color: variables.$color-beig
+            font-size: 7rem
+            font-weight: 300
+            text-transform: uppercase
+            margin:
+                top: 10px
+                bottom: 10px
+        & > .container__texto
+            width: 30rem
+            & > .texto
+                text-align: justify
+                color: variables.$color-beig
+                font-size: variables.$tipo--m
+        & > .link-home
+            grid-row: 2
+            padding: 10px 20px
+            background-color: variables.$color-azul
+            border-radius: 30px
+            text-decoration: none
+            font-size: 1rem
+            color: variables.$color-blanco
+            &:hover
+                background-color: variables.$color-beig
+                color: variables.$color-rosa
+    & > .sobre-mi__foto
+        grid-column: 2
+        background-color: variables.$color-beig
+        padding: 10px
+        box-sizing: border-box
+        & > .container__image
+            width: 25rem
+            margin: 0 auto
+
+// Seccion Quinta
+.seccion__quinta
+    background-color: variables.$color-azul
+    display: flex
+    align-items: center
+    justify-content: center
+    align-content: center
+    flex-wrap: wrap
+    flex-direction: row
+    & > .contacta__titulo
+        color: variables.$color-blanco
+        display: flex
+        align-items: center
+        justify-items: center
+        flex-wrap: wrap
+        font-size: variables.$titulo--contacta
+        padding: 0
+        font-weight: 300
+    & > .formulario__link
+        grid-row: 1
+        padding: 10px 20px
+        font-size: variables.$tipo--m
+        border: none
+        border-radius: 30px
+        color: variables.$color-blanco
+        background-color: variables.$color-rosa
+        margin: 100px
+        text-decoration: none
+        &:hover
+            background-color: variables.$color-rojo
+            
+// Seccion Final
+.home__seccion-final
+    background-color: variables.$color-rojo
+    display: flex
+    width: 100%
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+    padding: 20px
+    box-sizing: border-box

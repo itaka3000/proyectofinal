@@ -1,0 +1,32 @@
+@use "_base"
+@use "_variables"
+@use "vendors/_animacionSeleccionMenu"
+
+
+.header
+    display: inline-flex
+    flex: 1
+    justify-content: space-between
+    width: 100%
+
+/* MENU DE NAVEGACIÓN */
+.nav__button, .header__button-nav--open
+    display: none
+
+.nav
+    &__ul
+        display: flex
+        list-style: none
+        padding: 0
+    &__item
+        display: inline-flex
+        margin-right: 10px
+        position: relative
+        padding: 0 10px
+    &__link
+        text-decoration: none
+        letter-spacing: .3rem
+        color: variables.$color-azul
+        padding: .1rem
+        position: relative
+        text-transform: uppercase

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Senga - Digital Design</title>
+        <link rel="icon" type="image/png" href="img/favicon.png">
+        <link rel="apple-touch-icon" href="img/touch-icon-iphone.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="img/touch-icon-ipad.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/touch-icon-iphone-retina.png">
+        <link rel="apple-touch-icon" sizes="167x167" href="img/touch-icon-ipad-retina.png">
+        <meta name="theme-color" content="#f7aee5">
+        <meta name="author" content="Agnés Garcia">
+        <meta name="keywords" content="html, css, javascript, sass, alpinejs, minimalista, diseño, portfolio">
+        <meta name="description" content="Portfolio web de diseño grafico y web">
+        <meta property="og:image" content="img/miniatura.png">
+        <meta property="og:title" content="Senga">
+        <meta property="og:type" content="website">
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:width" content="400">
+        <meta property="og:image:height" content="300">
+        <meta property="og:image:alt" content="We are digital design">
+        <!--------------------------------------CSS-------------------------->
+        <link href="css/mobile.css" rel="stylesheet" media="all and (max-width: 600px)">
+        <link href="css/desktop.css" rel="stylesheet" media="all and (min-width: 601px)">
+        <!-------------------------NORMALIZE-------------------------->
+        <link href="sass/vendors/_normalize.s" rel="stylesheet">
+        <!-------------------------------FUENTES----------------------------------->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet">
+       <!-------------------------------ALPINEJS----------------------------------->
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    </head>
+    <!--------------------------------BODY ------------------------------------------->
+
+    <body id="body__sobre-mi">
+        <!--------------------------------HEADER ------------------------------------->
+        <header x-data="{ open: false }" class="header">
+            <!--LOGO pulsable-->
+            <div class="header__logo">
+                <a href="index.html" class="logo__link"><img src="img/logo-header.webp" alt="logo en negativo"
+                        class="header__logo-image"></a>
+            </div>
+            <!-- Boton abrir -->
+            <button class="header__button-nav--open" @click="open = true"><img src="img/menu-hamburger-abierto.webp"
+                    alt="open menu" class="nav__imagen"></button>
+            <!-- Navegador -->
+            <nav class="nav" x-bind:class="open ? 'nav--show' : ''">
+                <!-- Boton cerrar -->
+                <div class="nav__button" @click="open = false">
+                    <button class="header__button-nav--close"><img src="img/menu-hamburger-cerrar.webp" alt="close menu"
+                            class="nav__imagen"></button>
+                </div>
+                <!-- Menu -->
+                <ul class="nav__ul animacion">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="portfolio.html" class="nav__link">Portfolio</a></li>
+                    <li class="nav__item"><a href="sobre-mi.html" class="nav__link">Sobre mi</a></li>
+                    <li class="nav__item"><a href="contacto.html" class="nav__link">Contacto</a></li>
+                </ul>
+            </nav>
+            <!-- Fin Navegador -->
+        </header>
+        <!-------------------------------- Main ------------------------------------->
+        <main>
+            <!-------- Seccion Aviso Legal---------->
+            <section class="hero__legal" id="legal">
+                <h1 class="hero__title">AVISO LEGAL</h1>
+                <p class="parrafo">EN VIRTUD DE LA LEY 34/2002 DE SOCIEDADES SERVICIOS DE LA INFORMACIÓN INFORMAMOS
+                    DE QUE SENGA.ES ES UN DOMINIO DE INTERNET PERTENECIENTE AL TITULAR AGNÉS GARCIA OLTRA CON DNI 20856108-F
+                    Y ALOJADO EN EL SERVICIO DE HOSTING DE GODADDY (www.godaddy.com), CON DOMICILIO EN EE.UU.</p>
+                <p class="parrafo">En este espacio, el USUARIO, podrá encontrar toda la información relativa a
+                    los términos y condiciones legales que definen las relaciones entre los usuarios y la persona
+                    responsable de esta web. Como usuario, es importante que conozcas estos términos antes de continuar tu
+                    navegación.
+
+                    SENGA como responsable de esta web, asume el compromiso de procesar la
+                    información de nuestros usuarios y clientes con plenas garantías y cumplir con los requisitos nacionales
+                    y europeos que regulan la recopilación y uso de los datos personales de nuestros usuarios.
+
+                    Esta web, por tanto, cumple rigurosamente con el RGPD (REGLAMENTO (UE) 2016/679 de protección de datos)
+                    y la LSSI-CE la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio
+                    electrónico.
+                </p>
+            </section>
+            <!-------- Seccion Condiciones---------->
+            <section class="condiciones">
+                <h2 class="title">Condiciones generales de uso</h2>
+                <p class="parrafo">Las presentes Condiciones Generales regulan el uso (incluyendo el mero
+                    acceso) de las páginas de la web, integrantes del sitio web de Senga incluidos los contenidos y
+                    servicios puestos a disposición en ellas. Toda persona que acceda a la web, Senga.es (“Usuario”) acepta
+                    someterse a las Condiciones Generales vigentes en cada momento.</p>
+            </section>
+            <!-------- Seccion Politicas de privacidad---------->
+            <section class="datos">
+                <h2 class="title">Datos personales que recabamos y cómo lo hacemos</h2>
+                <p class="parrafo">Compromisos y obligaciones de los usuarios: El Usuario queda informado, y acepta,
+                    que el acceso a la presente web no supone, en modo alguno, el inicio de una relación comercial con
+                    SENGA. De esta forma, el usuario se compromete a utilizar el sitio Web, sus servicios y
+                    contenidos sin contravenir la legislación vigente, la buena fe y el orden público.
+
+                    Queda prohibido el uso de la web, con fines ilícitos o lesivos, o que, de cualquier forma, puedan causar
+                    perjuicio o impedir el normal funcionamiento del sitio web. Si se detectase alguno de estos usos
+                    indebidos, se emprenderían las acciones legales que se estimasen oportunas para que dicho uso ilícito o
+                    lesivo cesase de inmediato y, se resarciesen los daños ocasionados mediante el recurso correspondiente
+                    ante los tribunales e instancias, tanto españolas como europeas. Respecto de los contenidos de esta web,
+                    se prohíbe:
+                </p>
+                <ul class="datos__ul">
+                    <li class="datos__item">Su reproducción, distribución o modificación, total o parcial, a menos que se
+                        cuente con la autorización de su legítimo titular;</li>
+                    <li class="datos__item">Cualquier vulneración de los derechos del prestador o del legítimo titular;</li>
+                    <li class="datos__item">Su utilización para fines comerciales o publicitarios.</li>
+                </ul>
+                <p class="parrafo">En la utilización de la web, Senga.es, el Usuario se compromete a no
+                    llevar a cabo ninguna conducta que pudiera dañar la imagen, los intereses y los derechos de Senga o de
+                    terceros o que pudiera dañar, inutilizar o sobrecargar el sitio web o que impidiera, de
+                    cualquier forma, la normal utilización de la web.
+
+                    No obstante, el Usuario debe ser consciente de que las medidas de seguridad de los sistemas informáticos
+                    en Internet no son enteramente fiables y que, por tanto Senga no puede garantizar la
+                    inexistencia de virus u otros elementos que puedan producir alteraciones en los sistemas informáticos
+                    (software y hardware) del Usuario o en sus documentos electrónicos y ficheros contenidos en los mismos.
+                </p>
+            </section>
+            <!-------- Seccion Medidas de seguridad---------->
+            <section class="seguridad">
+                <h2 class="title">Medidas de seguridad</h2>
+                <p class="parrafo">Los datos personales comunicados por el usuario a Senga pueden ser almacenados en bases
+                    de datos automatizadas o no, cuya titularidad corresponde en exclusiva a Senga, asumiendo ésta todas las
+                    medidas de índole técnica, organizativa y de seguridad que garantizan la confidencialidad, integridad y
+                    calidad de la información contenida en las mismas de acuerdo con lo establecido en la normativa vigente
+                    en protección de datos.</p>
+                <p class="parrafo">La comunicación entre los usuarios y Senga utiliza un canal seguro, y los datos
+                    transmitidos son cifrados gracias a protocolos a https, por tanto, garantizamos las mejores condiciones
+                    de seguridad para que la confidencialidad de los usuarios esté garantizada.</p>
+            </section>
+            <!-------- Seccion Propiedad Intelectual---------->
+            <section class="propiedad-intelectual">
+                <h2 class="title">Derechos de propiedad intelectual e industrial</h2>
+                <p class="parrafo">En virtud de lo dispuesto en los artículos 8 y 32.1, párrafo segundo, de la Ley de
+                    Propiedad Intelectual, quedan expresamente prohibidas la reproducción, la distribución y la comunicación
+                    pública, incluida su modalidad de puesta a disposición, de la totalidad o parte de los contenidos de
+                    esta página web, con fines comerciales, en cualquier soporte y por cualquier medio técnico, sin la
+                    autorización de Senga. El usuario se compromete a respetar los derechos de Propiedad
+                    Intelectual e Industrial titularidad de Senga.</p>
+                <p class="parrafo">El usuario conoce y acepta que la totalidad del sitio web, conteniendo sin carácter
+                    exhaustivo el texto, software, contenidos (incluyendo estructura, selección, ordenación y presentación
+                    de los mismos), fotografías, material audiovisual y gráficos, está protegida por marcas, derechos de
+                    autor y otros derechos legítimos, de acuerdo con los tratados internacionales en los que España es parte
+                    y otros derechos de propiedad y leyes de España.</p>
+                <p class="parrafo">En el caso de que un usuario o un tercero consideren que se ha producido una violación de
+                    sus legítimos derechos de propiedad intelectual por la introducción de un determinado contenido en la
+                    web, deberá notificar dicha circunstancia a Senga indicando:</p>
+                <ul class="datos__ul">
+                    <li class="datos__item">Datos personales del interesado titular de los derechos presuntamente
+                        infringidos, o indicar la representación con la que actúa en caso de que la reclamación la presente
+                        un tercero distinto del interesado.</li>
+                    <li class="datos__item">Datos personales del interesado titular de los derechos presuntamente
+                        infringidos, o indicar la representación con la que actúa en caso de que la reclamación la presente
+                        un tercero distinto del interesado.</li>
+                </ul>
+            </section>
+            <!-------- Seccion Enlaces externos---------->
+            <section class="enlaces-externos">
+                <h2 class="title">Enlaces Externos</h2>
+                <p class="parrafo">Las páginas de la web Senga.es, proporciona enlaces a otros sitios web propios y
+                    contenidos que son propiedad de terceros tales como:</p>
+                <ul class="datos__ul">
+                    <li class="datos__item">Contenidos de otros blogs</li>
+                    <li class="datos__item">Herramientas</li>
+                    <li class="datos__item">Recursos</li>
+                </ul>
+                <p class="parrafo">El único objeto de los enlaces es proporcionar al Usuario la posibilidad de acceder a
+                    dichos enlaces. [VUESTRO NOMBRE/MARCA] no se responsabiliza en ningún caso de los resultados que puedan
+                    derivarse al Usuario por acceso a dichos enlaces.</p>
+                <p class="parrafo">Asimismo, el usuario encontrará dentro de este sitio, páginas, promociones, programas de
+                    afiliados que acceden a los hábitos de navegación de los usuarios para establecer perfiles. Esta
+                    información siempre es anónima y no se identifica al usuario.</p>
+                <p class="parrafo">La Información que se proporcione en estos Sitios patrocinados o enlaces de afiliados
+                    está sujeta a las políticas de privacidad que se utilicen en dichos Sitios y no estará sujeta a esta
+                    política de privacidad. Por lo que recomendamos encarecidamente a los Usuarios a revisar detalladamente
+                    las políticas de privacidad de los enlaces de afiliados.</p>
+                <p class="parrafo">El Usuario que se proponga establecer cualquier dispositivo técnico de enlace desde su
+                    sitio web al portal Senga.es deberá obtener la autorización previa y escrita del titular del sitio web
+                    de Senga. El establecimiento del enlace no implica en ningún caso la existencia de relaciones entre
+                    Senga y el propietario del sitio en el que se establezca el enlace, ni la aceptación o aprobación por
+                    parte de Senga de sus contenidos o servicios.</p>
+            </section>
+            <!-------- Seccion Exclusion de garantias y responsabilidades---------->
+            <section class="garantias">
+                <h2 class="title">Exclusión de garantías y responsabilidades</h2>
+                <p class="parrafo">El Prestador no otorga ninguna garantía ni se hace responsable, en ningún caso, de los
+                    daños y perjuicios de cualquier naturaleza que pudieran traer causa de:</p>
+                <ul class="datos__ul">
+                    <li class="datos__item">La falta de disponibilidad, mantenimiento y efectivo funcionamiento de la web, o
+                        de sus servicios y contenidos;</li>
+                    <li class="datos__item">La existencia de virus, programas maliciosos o lesivos en los contenidos;</li>
+                    <li class="datos__item">El uso ilícito, negligente, fraudulento o contrario a este Aviso Legal;</li>
+                    <li class="datos__item">La falta de licitud, calidad, fiabilidad, utilidad y disponibilidad de los
+                        servicios prestados por terceros y puestos a disposición de los usuarios en el sitio web.</li>
+                    <li class="datos__item">El prestador no se hace responsable bajo ningún concepto de los daños que
+                        pudieran dimanar del uso ilegal o indebido de la presente página web.</li>
+                </ul>
+            </section>
+            <!-------- Seccion Ley aplicable---------->
+            <section class="ley-aplicable">
+                <h2 class="title">Ley aplicable y jurisdicción</h2>
+                <p class="parrafo">Con carácter general las relaciones entre Senga con los Usuarios de sus servicios
+                    telemáticos, presentes en esta web se encuentran sometidas a la legislación y jurisdicción españolas y a
+                    los tribunales.</p>
+            </section>
+            <!-------- Seccion Contacto---------->
+            <section class="contacto">
+                <h2 class="title">Contacto</h2>
+                <p class="parrafo">En caso de que cualquier Usuario tuviese alguna duda acerca de estas Condiciones legales o cualquier comentario sobre el portal senga.es, por favor diríjase a odisseart@gmail.com</p>
+            </section>
+            <!-------- Seccion Actualizado--------->
+            <section class="actualizado">
+                <p class="parrafo">El aviso legal ha sido actualizado en 22 de junio del 2023</p>
+            </section>
+            <!------------------------Subir Arriba -------------------->
+            <div class="arrow-up"><a href="#legal"><img class="arrow__image" src="img/arrow-up.webp"
+                        alt="flecha hacia arriba"></a>
+            </div>
+        </main>
+        <!-------------------------------- FOOTER--------------------->
+        <footer class="footer">
+            <div class="footer__logo">
+                <img src="img/logo-header.webp" alt="logo en negativo"
+                        class="footer__logo-image">
+            </div>
+            <article class="footer__redes">   
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="https://www.behance.net/agnsgarcia1" class="footer_link"><img
+                                src="img/behance-rosa.webp" alt="icono de behance" class="image"></a></li>
+                    <li class="footer__item"><a href="https://www.instagram.com/odisseart/?hl=es" class="footer_link"><img
+                                src="img/instagram-rosa.webp" alt="icono de instagram" class="image"></a></li>
+                    <li class="footer__item"><a href="https://es.linkedin.com/in/agn%C3%A9s-garcia-oltra-b40042117"
+                            class="footer_link"><img src="img/linkedin-rosa.webp" alt="icono de linkedin" class="image"></a>
+                    </li>
+                    <li class="footer__item"><a href="https://github.com/itaka3000" class="footer_link"><img
+                                src="img/github-rosa.webp" alt="icono de github" class="image"></a></li>
+                </ul>
+            </article>
+            <div class="derechos">
+                <p class="derechos__texto">All rights reserved &copy; 2023 - Agnés Garcia Oltra</p>
+            </div>
+        </footer>
+    </body>
+</html>

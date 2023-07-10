@@ -1,0 +1,217 @@
+@use "_base"
+@use "_variables"
+@use "_extend"
+@use "vendors/_animacionTituloHome-Contacta"
+@use "_header"
+@use "_footer"
+
+.hero
+    background-image: url("../img/fondo.webp")
+    background-size: cover
+    background-repeat: no-repeat
+    background-attachment: fixed
+
+.hero__container-home
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: repeat(3, auto)
+    gap: variables.$gap--s
+    align-items: center
+    height: 100vh
+.hero__glass
+    grid-row: 2
+    margin: 10px
+    box-sizing: border-box
+    padding: 10px
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    flex-wrap: wrap
+    .hero__image
+        width: 20rem
+.hero__scroll
+    grid-row: 3
+    padding: 20px
+    width: 2rem
+    margin-bottom: 10px
+    display: flex-inline
+    margin: 0 auto
+.hero_columna
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    align-content: center
+
+// Redes 
+.hero__redes
+    grid-row: 1
+    width: fit-content
+    margin: 0 auto
+    ul
+        padding: 0
+        list-style: none
+        display: flex
+        flex-direction: row
+        gap: variables.$gap--xs
+    .redes__contendor
+        padding: 20px
+        box-sizing: border-box
+        width: fit-content
+    .redes__imagen
+        margin: 0 auto
+        width: variables.$global--xxl
+
+//Seccion Segunda
+.seccion__segunda-home
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: repeat(4, 1fr)
+    grid-template-areas: "tarjeta-primera" "tarjeta-segunda" "tarjeta-tercera" "tarjeta-cuarta"
+    gap: .3rem
+    background-color: variables.$color-blanco
+.container__tarjeta
+    grid-area: tarjeta-primera
+    @extend .tarjetas__home
+    & > .container__image
+        display: none
+    & > .texto
+        font-size: variables.$tipo--m
+.container__tarjeta-dos
+    grid-area: tarjeta-segunda
+    @extend .tarjetas__home
+    & > .container__image
+        display: none
+    & > .texto
+        font-size: variables.$tipo--m
+.container__tarjeta-tres
+    grid-area: tarjeta-tercera
+    @extend .tarjetas__home
+    & > .container__image
+        display: none
+    & > .texto
+        font-size: variables.$tipo--m
+.container__tarjeta-cuatro
+    grid-area: tarjeta-cuarta
+    @extend .tarjetas__home
+    & > .container__image
+        display: none
+    & > .texto
+        font-size: variables.$tipo--m
+
+// Seccion Tercera
+
+.seccion__tercera-home
+    background-color: variables.$color-rojo
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: repeat(2, auto)
+    justify-items: center
+    align-items: center
+    justify-content: center
+    align-content: center
+    padding: 20px
+.carrusel-home
+    grid-row: 2
+.swiper
+    width: 15rem
+    height: 20rem
+    margin: 20px
+.container__texto-home
+    grid-row: 1
+    display: flex
+    flex-direction: column
+    align-items: center
+    flex-wrap: wrap
+    & > .titulo
+        color: variables.$color-blanco
+        font-size: 3.5rem
+        text-align: center
+        font-weight: 300
+        text-transform: uppercase
+    & > .link-home
+        padding: 10px 20px
+        background-color: variables.$color-beig
+        border-radius: 30px
+        text-decoration: none
+        font-size: variables.$tipo--s
+        color: variables.$color-rojo
+
+//Seccion Cuarta
+.seccion__cuarta-home
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: repeat(2, auto)
+    & >.sobre-mi__home
+        grid-row: 2
+        background-color: variables.$color-rosa
+        padding: 20px
+        display: flex
+        flex-direction: column
+        align-items: center
+        flex-wrap: wrap
+        justify-content: center
+        & > .titulo
+            color: variables.$color-beig
+            font-size: 3.5rem
+            font-weight: 300
+            text-transform: uppercase
+            margin:
+                top: 10px
+                bottom: 10px
+        & > .container__texto
+            width: 100%
+            & > .texto
+                text-align: center
+                color: variables.$color-beig
+                font-size: variables.$tipo--m
+        & > .link-home
+            padding: 10px 20px
+            background-color: variables.$color-azul
+            border-radius: 30px
+            text-decoration: none
+            font-size: 1rem
+            color: variables.$color-blanco
+    & > .sobre-mi__foto
+        display: none
+
+// Seccion Quinta
+.seccion__quinta
+    background-color: variables.$color-azul
+    display: flex
+    align-items: center
+    justify-content: center
+    align-content: center
+    flex-wrap: wrap
+    flex-direction: row
+    & > .contacta__titulo
+        color: variables.$color-blanco
+        display: flex
+        align-items: center
+        justify-items: center
+        flex-wrap: wrap
+        font-size: variables.$tipo-xxxl
+        padding: 0
+        font-weight: 300
+    & > .formulario__link
+        padding: 10px 20px
+        font-size: variables.$tipo--m
+        border: none
+        border-radius: 30px
+        color: variables.$color-blanco
+        background-color: variables.$color-rosa
+        text-decoration: none
+        margin: 10px
+
+// Seccion Final
+.home__seccion-final
+    background-color: variables.$color-rojo
+    display: flex
+    width: 100%
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+    padding: 20px
+    box-sizing: border-box

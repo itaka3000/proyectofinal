@@ -1,0 +1,98 @@
+@use "_variables"
+//global
+html
+  scroll-behavior: smooth
+
+body
+  font-family: variables.$font--main
+
+//Imagenes global
+img
+  width: 100%
+  object-fit: cover
+  object-position: center
+
+  //Svg de index
+svg
+  width: fit-content
+  height: fit-content
+  margin: 0
+  box-sizing: border-box
+
+//Logo
+.header__logo
+  width: 2.7rem
+  margin-left: 1rem
+//header global
+.header
+  position: sticky
+  top: 0
+  left: 0
+  right: 0
+  display: flex
+  justify-content: space-between
+  align-items: center
+  z-index: 9999
+  background-color: variables.$color-blanco
+  flex-wrap: wrap
+  height: variables.$global-header
+
+//arrow up
+.arrow-up
+  background-color: variables.$color-rojo
+  width: 2rem
+  height: 2rem
+  border-radius: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  opacity: 1
+  position: fixed
+  bottom: 2rem
+  left: 2rem
+.arrow__image
+  width: 1rem
+
+//footer
+.footer__logo
+  grid-area: logo
+  width: 2.5rem
+.footer__list
+  grid-area: iconos
+  padding: 0
+  display: flex
+  gap: variables.$gap--xs
+  margin: 5px auto
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+.footer__item
+  list-style: none
+  width: 30px
+.derechos__texto
+  grid-area: texto
+  text-align: center
+  color: variables.$color-rosa
+  font-weight: 300
+
+// Aviso legal
+.hero__legal
+  .hero__title
+    background-color: variables.$color-rojo
+    color: variables.$color-blanco
+    padding: variables.$global--s
+    box-sizing: border-box
+    text-align: center
+.parrafo
+  margin: 30px
+  text-align: justify
+
+.title
+  background-color: variables.$color-beig
+  color: variables.$color-rojo
+  padding: variables.$global--s
+  text-align: center
+
+  .datos__ul
+    list-style: square inside

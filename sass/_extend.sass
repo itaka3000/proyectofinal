@@ -1,0 +1,80 @@
+@use "variables"
+@use "mixins"
+
+//Extend de Home
+.linia__vertical-home
+    grid-column: 1 / 2
+    border: variables.$linia-vertical--home
+    height: 120px
+    width: 0
+    margin: 0 auto
+
+.tarjetas__home
+    background-image: url("../img/fondo.webp")
+    background-size: cover
+    background-repeat: no-repeat
+    background-attachment: fixed
+    border-radius: 30px
+    margin: 30px
+    padding: 30px
+    box-sizing: border-box
+    display: flex
+    flex-direction: column-reverse
+    align-items: center
+    align-content: center
+    flex-wrap: wrap
+    justify-content: center
+    & > .container__image
+        width: 7rem
+    & > .texto
+        color: variables.$color-blanco
+        font-size: variables.$tipo--xl
+        letter-spacing: .3rem
+        text-align: center
+
+//Extend Portfolio
+.imagen-galeria
+    justify-self: center
+    width: fit-content
+    display: flex
+    justify-content: center
+    align-items: center
+    .container__image-portfolio
+        width: 20rem
+        .image-portfolio
+            aspect-ratio: 1
+            object-fit: cover
+            object-position: center
+            position: relative
+    .efecto
+        width: 20rem
+        aspect-ratio: 1
+        position: absolute
+        color: variables.$color-blanco
+        font-weight: bold
+        text-transform: uppercase
+        box-sizing: border-box
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        opacity: 0
+        &:hover
+            opacity: 1
+            backdrop-filter: blur(5px)
+
+//Extend Portfolio Version mobile
+.imagen-galeria-mobile
+    justify-self: center
+    width: fit-content
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    .container__image-portfolio
+        width: 15rem
+        .image-portfolio
+            aspect-ratio: 1
+            object-fit: cover
+            object-position: center
+            border-radius: 100%

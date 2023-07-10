@@ -1,0 +1,36 @@
+// Animacion titulo de la seccion contacta de Home//
+.box
+    height: 5rem
+    overflow: hidden
+    position: relative
+    &::before
+        top: 0
+        left: 0
+        z-index: 1
+        width: 100%
+        content: ''
+        height: 10rem
+        position: absolute
+    &::after
+        left: 0
+        bottom: 0
+        z-index: 1
+        width: 100%
+        content: ''
+        height: 10rem
+        position: absolute
+    & > ul
+        margin: 0
+        padding: 0
+        animation: scroll-titulo 6s linear infinite
+        & > li
+            opacity: 1
+            height: 10rem
+            list-style: none
+
+@keyframes scroll-titulo
+    from
+        transform: translateY(0)
+
+    to
+        transform: translateY(-80%)

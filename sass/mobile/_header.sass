@@ -1,0 +1,41 @@
+@use "_base"
+@use "_variables"
+
+//menu//
+.nav
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    transform: translateY(-100%)
+    transition: 0.5s
+    background-color: #fff7e300
+    backdrop-filter: blur(50px)
+    -webkit-backdrop-filter: blur(100px)
+    width: 100%
+    padding: 0
+    margin: 0
+    &--show
+        transform: translateX(0px)
+    &__button
+        text-align: right
+        margin: variables.$global--s
+    &__ul
+        list-style: none
+        padding: 0
+        margin: 0
+    &__link
+        display: block
+        padding: variables.$global--s
+        font-size: variables.$tipo--l
+        text-align: center
+        text-decoration: none
+        color: variables.$color-azul
+.nav__imagen
+    width: variables.$global--l
+
+.header__button-nav--open, .header__button-nav--close
+    background: none
+    border: none
+    padding: 10px

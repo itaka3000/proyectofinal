@@ -1,0 +1,330 @@
+@use "_base"
+@use "_variables"
+@use "_extend"
+@use "_header"
+@use "_footer"
+
+//Subir arriba
+//Anclas menu
+.portfolio__menu
+    background-color: variables.$color-rojo
+.portfolio__nav
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: center
+.portfolio__ul
+    list-style: none
+    padding: 0
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: center
+    font-size: variables.$tipo--s
+.portfolio__item
+    margin: 5px
+    padding-right: 10px
+    border-right: 2px solid variables.$color-blanco
+    &:last-child
+        border: none
+.portfolio__link
+    text-decoration: none
+    color: variables.$color-blanco
+//Modal porfolio
+.portfolio
+    background-color: rgba(0, 0, 0, 0.635)
+    backdrop-filter: blur(5px)
+    display: flex
+    justify-content: center
+    align-items: center
+.modal
+    display: none
+    position: fixed
+    left: 0
+    right: 0
+    bottom: 0
+    height: 100vh
+.imagen__completa
+    width: 15rem
+.aspa
+    border-radius: 30%
+    border: none
+    background-color: darksalmon
+    width: fit-content
+    color: white
+
+.modal--show
+    display: flex
+    z-index: 999999
+
+.container__portfolio-orden
+    display: flex
+    flex-direction: column-reverse
+    align-content: space-between
+    flex-wrap: wrap
+    align-items: flex-end
+
+//estilos primera seccion
+.portfolio__branding
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: repeat(9, auto)
+    grid-template-areas: "titulo" "imagen-primera" "imagen-segunda" "imagen-tercera" "imagen-cuarta" "imagen-quinta" "imagen-sexta"
+    gap: variables.$gap--s
+    & > .branding__titulo
+        grid-area: titulo
+        background-color: variables.$color-azul
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-wrap: wrap
+        padding: 20px
+        box-sizing: border-box
+        color: variables.$color-blanco
+        font-size: variables.$tipo--m
+        text-transform: uppercase
+        letter-spacing: .5rem
+        font-weight: 300
+        margin: 0
+    & > .branding__imagen-primera
+        grid-area: imagen-primera
+        @extend .imagen-galeria-mobile
+    & > .branding__imagen-segunda
+        grid-area: imagen-segunda
+        @extend .imagen-galeria-mobile
+    & > .branding__imagen-tercera
+        grid-area: imagen-tercera
+        @extend .imagen-galeria-mobile
+    & > .branding__imagen-cuarta
+        grid-area: imagen-cuarta
+        @extend .imagen-galeria-mobile
+    & > .branding__imagen-quinta
+        grid-area: imagen-quinta
+        @extend .imagen-galeria-mobile
+    & > .branding__imagen-sexta
+        grid-area: imagen-sexta
+        @extend .imagen-galeria-mobile
+.boton-branding
+    background-color: variables.$color-azul
+    color: variables.$color-blanco
+    border: none
+    font-size: variables.$tipo--m
+    border-radius: 30px
+    padding: 10px 20px
+    margin-bottom: 10px
+//Segunda Seccion
+
+.portfolio__carteleria
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: repeat(9, auto)
+    grid-template-areas: "titulo" "imagen-primera" "imagen-segunda" "imagen-tercera" "imagen-cuarta" "imagen-quinta" "imagen-sexta" "imagen-septima" "imagen-novena" "imagen-octava"
+    gap: variables.$gap--s
+    & > .carteleria__titulo
+        grid-area: titulo
+        background-color: variables.$color-rosa
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-wrap: wrap
+        padding: 20px
+        box-sizing: border-box
+        color: variables.$color-blanco
+        font-size: variables.$tipo--m
+        text-transform: uppercase
+        letter-spacing: .5rem
+        font-weight: 300
+        margin: 0
+    & > .carteleria__imagen-primera
+        grid-area: imagen-primera
+        @extend .imagen-galeria-mobile
+    & > .carteleria__imagen-segunda
+        grid-area: imagen-segunda
+        @extend .imagen-galeria-mobile
+    & > .carteleria__imagen-tercera
+        grid-area: imagen-tercera
+        @extend .imagen-galeria-mobile
+    & > .carteleria__imagen-cuarta
+        grid-area: imagen-cuarta
+        @extend .imagen-galeria-mobile
+    & > .carteleria__imagen-quinta
+        grid-area: imagen-quinta
+        @extend .imagen-galeria-mobile
+    & > .carteleria__imagen-sexta
+        grid-area: imagen-sexta
+        @extend .imagen-galeria-mobile
+    & > .carteleria__imagen-septima
+        grid-area: imagen-septima
+        @extend .imagen-galeria-mobile
+    & > .carteleria__imagen-octava
+        grid-area: imagen-octava
+        @extend .imagen-galeria-mobile
+    & > .carteleria__imagen-novena
+        grid-area: imagen-novena
+        @extend .imagen-galeria-mobile
+
+.boton-carteleria
+    background-color: variables.$color-rosa
+    color: variables.$color-blanco
+    border: none
+    font-size: variables.$tipo--m
+    border-radius: 30px
+    padding: 10px 20px
+    margin-bottom: 10px
+
+// Seccion Tercera - Ilustracion
+.portfolio__ilustracion
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: repeat(10, auto)
+    grid-template-areas: "titulo" "imagen-primera" "imagen-segunda" "imagen-tercera" "imagen-cuarta" "imagen-quinta" "imagen-sexta" "imagen-septima" "imagen-octava" "imagen-novena"
+    gap: variables.$gap--s
+    & > .ilustracion__titulo
+        grid-area: titulo
+        background-color: variables.$color-azul
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-wrap: wrap
+        padding: 20px
+        box-sizing: border-box
+        color: variables.$color-blanco
+        font-size: variables.$tipo--m
+        text-transform: uppercase
+        letter-spacing: .5rem
+        font-weight: 300
+        margin: 0
+    & > .ilustracion__imagen-primera
+        grid-area: imagen-primera
+        @extend .imagen-galeria-mobile
+    & > .ilustracion__imagen-segunda
+        grid-area: imagen-segunda
+        @extend .imagen-galeria-mobile
+    & > .ilustracion__imagen-tercera
+        grid-area: imagen-tercera
+        @extend .imagen-galeria-mobile
+    & > .ilustracion__imagen-cuarta
+        grid-area: imagen-cuarta
+        @extend .imagen-galeria-mobile
+    & > .ilustracion__imagen-quinta
+        grid-area: imagen-quinta
+        @extend .imagen-galeria-mobile
+    & > .ilustracion__imagen-sexta
+        grid-area: imagen-sexta
+        @extend .imagen-galeria-mobile
+    & > .ilustracion__imagen-septima
+        grid-area: imagen-septima
+        @extend .imagen-galeria-mobile
+    & > .ilustracion__imagen-octava
+        grid-area: imagen-octava
+        @extend .imagen-galeria-mobile
+    & > .ilustracion__imagen-novena
+        grid-area: imagen-novena
+        @extend .imagen-galeria-mobile
+
+.boton-ilustracion
+    background-color: variables.$color-azul
+    color: variables.$color-blanco
+    border: none
+    font-size: variables.$tipo--m
+    border-radius: 30px
+    padding: 10px 20px
+    margin-bottom: 10px
+
+// Seccion Cuarta - Edicion y Fotomontaje
+.portfolio__edicion
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: repeat(7, auto)
+    grid-template-areas: "titulo" "imagen-primera" "imagen-segunda" "imagen-tercera" "imagen-cuarta" "imagen-quinta" "imagen-sexta"
+    gap: variables.$gap--s
+    & > .edicion__titulo
+        grid-area: titulo
+        background-color: variables.$color-beig
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-wrap: wrap
+        padding: 20px
+        box-sizing: border-box
+        color: variables.$color-rojo
+        font-size: variables.$tipo--m
+        text-transform: uppercase
+        letter-spacing: .5rem
+        font-weight: 300
+        margin: 0
+    & > .edicion__imagen-primera
+        grid-area: imagen-primera
+        @extend .imagen-galeria-mobile
+    & > .edicion__imagen-segunda
+        grid-area: imagen-segunda
+        @extend .imagen-galeria-mobile
+    & > .edicion__imagen-tercera
+        grid-area: imagen-tercera
+        @extend .imagen-galeria-mobile
+    & > .edicion__imagen-cuarta
+        grid-area: imagen-cuarta
+        @extend .imagen-galeria-mobile
+    & > .edicion__imagen-quinta
+        grid-area: imagen-quinta
+        @extend .imagen-galeria-mobile
+    & > .edicion__imagen-sexta
+        grid-area: imagen-sexta
+        @extend .imagen-galeria-mobile
+
+.boton-edicion
+    background-color: variables.$color-beig
+    color: variables.$color-rojo
+    border: none
+    font-size: variables.$tipo--m
+    border-radius: 30px
+    padding: 10px 20px
+    margin-bottom: 10px
+
+// Seccion Quinta - Packaging
+.portfolio__packaging
+    display: grid
+    grid-template-columns: auto
+    grid-template-rows: repeat(5, auto)
+    grid-template-areas: "titulo" "imagen-primera" "imagen-segunda" "imagen-tercera" "imagen-cuarta"
+    gap: variables.$gap--s
+    & > .packaging__titulo
+        grid-area: titulo
+        background-color: variables.$color-rojo
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-wrap: wrap
+        padding: 20px
+        box-sizing: border-box
+        color: variables.$color-beig
+        font-size: variables.$tipo--m
+        text-transform: uppercase
+        letter-spacing: .5rem
+        font-weight: 300
+        margin: 0
+    & > .packaging__imagen-primera
+        grid-area: imagen-primera
+        @extend .imagen-galeria-mobile
+    & > .packaging__imagen-segunda
+        grid-area: imagen-segunda
+        @extend .imagen-galeria-mobile
+    & > .packaging__imagen-tercera
+        grid-area: imagen-tercera
+        @extend .imagen-galeria-mobile
+    & > .packaging__imagen-cuarta
+        grid-area: imagen-cuarta
+        @extend .imagen-galeria-mobile
+.boton-packaging
+    background-color: variables.$color-rojo
+    color: variables.$color-beig
+    border: none
+    font-size: variables.$tipo--m
+    border-radius: 30px
+    padding: 10px 20px
+    margin-bottom: 10px
+
+.seccion__ultima-portfolio
+    background-color: variables.$color-azul
+
+

@@ -1,0 +1,153 @@
+@use "_base"
+@use "_variables"
+@use "_header"
+@use "_footer"
+
+
+//Seccion Principal
+
+.hero__contact
+    background-color: variables.$color-rosa
+    width: 100%
+    .hero__container-contact
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-template-rows: repeat(3, auto)
+        grid-template-areas: "titulo formulario" "subtitulo formulario" "imagen formulario"
+        justify-items: center
+        align-items: center
+        justify-content: center
+        align-content: center
+    .hero__text-contact
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        justify-content: center
+        align-items: center
+    .hero__titulo-contact
+        grid-area: titulo
+        color: variables.$color-blanco
+        font-size: 7rem
+        font-weight: 300
+        text-align: center
+        margin: 0
+        .salto-linia::before
+            content: '\A'
+            white-space: pre
+    .hero__subtitulo-contact
+        color: variables.$color-blanco
+        font-size: 3rem
+        font-weight: 300
+    .hero__form-contact
+        grid-area: formulario
+        align-items: center
+    .container__image
+        grid-area: imagen
+        width: 20rem
+        padding: 30px
+    .container__form
+        background-color: variables.$color-azul
+        border-radius: 15rem 0 15rem 0
+        padding: 7rem
+        margin: 0
+        height: 100%
+        width: 50vw
+        box-sizing: border-box
+    .form
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        align-items: stretch
+        justify-content: center
+        align-content: center
+        gap: 1rem
+        & > .nombre
+            justify-self: center
+            color: variables.$color-blanco
+            font-size: variables.$tipo--m
+            text-align: center
+            & > input
+                border: none
+                border-radius: 30px
+                width: 100%
+                padding: 10px
+                margin-inline: 1rem
+                &:focus
+                    border: 3px solid variables.$color-rosa
+                    outline: none
+        & > .apellidos
+            justify-self: center
+            color: variables.$color-blanco
+            font-size: variables.$tipo--m
+            text-align: center
+            & > input
+                border: none
+                border-radius: 30px
+                width: 100%
+                padding: 10px
+                margin-inline: 1rem
+                &:focus
+                    border: 3px solid variables.$color-rosa
+                    outline: none
+        & > .mail
+            justify-self: center
+            color: variables.$color-blanco
+            font-size: variables.$tipo--m
+            text-align: center
+            & > input
+                border: none
+                border-radius: 30px
+                width: 100%
+                padding: 10px
+                margin-inline: 1rem
+                &:focus
+                    border: 3px solid variables.$color-rosa
+                    outline: none
+        & > .mensaje
+            color: variables.$color-blanco
+            font-size: variables.$tipo--m
+            text-align: center
+        & > .politica-legal
+            text-align: center
+            padding: 10px
+            color: variables.$color-blanco
+            .politica-legal__link
+                text-decoration: none
+                color: variables.$color-rosa
+                &:hover
+                    color: variables.$color-rojo
+    .textarea
+        border: none
+        border-radius: 20px
+        width: 100%
+        padding: 10px
+        margin-inline: 1rem
+        &:focus
+            border: 3px solid variables.$color-rosa
+            outline: none
+    .obligatorio:before
+        content: '*'
+        color: red
+
+    .button__submit
+        background-color: variables.$color-rosa
+        padding: 10px 20px
+        color: variables.$color-blanco
+        border: none
+        border-radius: 30px
+        font-weight: bold
+        font-size: variables.$tipo--s
+        text-transform: uppercase
+        margin-inline: 15rem
+        &:hover
+            background-color: variables.$color-rojo
+
+.contacto__seccion-final
+    background-color: variables.$color-rojo
+    display: flex
+    width: 100%
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+    padding: 20px
+    box-sizing: border-box

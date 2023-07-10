@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Senga - Digital Design</title>
+        <link rel="icon" type="image/png" href="img/favicon.png">
+        <link rel="apple-touch-icon" href="img/touch-icon-iphone.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="img/touch-icon-ipad.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/touch-icon-iphone-retina.png">
+        <link rel="apple-touch-icon" sizes="167x167" href="img/touch-icon-ipad-retina.png">
+        <meta name="theme-color" content="#f7aee5">
+        <meta name="author" content="Agnés Garcia">
+        <meta name="keywords" content="html, css, javascript, sass, alpinejs, minimalista, diseño, portfolio">
+        <meta name="description" content="Portfolio web de diseño grafico y web">
+        <meta property="og:image" content="img/miniatura.png">
+        <meta property="og:title" content="Senga">
+        <meta property="og:type" content="website">
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:width" content="400">
+        <meta property="og:image:height" content="300">
+        <meta property="og:image:alt" content="We are digital design">
+        <!--------------------------------------CSS-------------------------->
+        <link href="css/mobile.css" rel="stylesheet" media="all and (max-width: 600px)">
+        <link href="css/desktop.css" rel="stylesheet" media="all and (min-width: 601px)">
+        <!-------------------------NORMALIZE-------------------------->
+        <link href="sass/vendors/_normalize.scss" rel="stylesheet">
+        <!-------------------------------FUENTES----------------------------------->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet">
+        <!-------------------------------ALPINEJS----------------------------------->
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <!---------------------AOS - SCROLL ---------------->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    </head>
+    <!--------------------------------BODY ------------------------------------------->
+    <body id="body__sobre-mi">
+        <!--------------------------------HEADER ------------------------------------->
+        <header x-data="{ open: false }" class="header">
+            <!--LOGO pulsable-->
+            <div class="header__logo">
+                <a href="index.html" class="logo__link"><img src="img/logo-header.webp" alt="logo en negativo"
+                        class="header__logo-image"></a>
+            </div>
+            <!-- Boton abrir -->
+            <button class="header__button-nav--open" @click="open = true"><img src="img/menu-hamburger-abierto.webp"
+                    alt="open menu" class="nav__imagen"></button>
+            <!-- Navegador -->
+            <nav class="nav" x-bind:class="open ? 'nav--show' : ''">
+                <!-- Boton cerrar -->
+                <div class="nav__button" @click="open = false">
+                    <button class="header__button-nav--close"><img src="img/menu-hamburger-cerrar.webp" alt="close menu"
+                            class="nav__imagen"></button>
+                </div>
+                <!-- Menu -->
+                <ul class="nav__ul animacion">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="portfolio.html" class="nav__link">Portfolio</a></li>
+                    <li class="nav__item"><a href="sobre-mi.html" class="nav__link">Sobre mi</a></li>
+                    <li class="nav__item"><a href="contacto.html" class="nav__link">Contacto</a></li>
+                </ul>
+            </nav>
+            <!-- Fin Navegador -->
+        </header>
+        <!-------------------------------- Main ------------------------------------->
+        <main>
+            <!-------- Seccion Primera---------->
+            <section class="seccion__primera" id="inicio" data-aos="zoom-in-up">
+                <article class="seccion__primera-fondo-logo">
+                    <div class="seccion__primera-container"><img src="img/logocompleto-blanco.webp" alt="logo"
+                            class="seccion__image"></div>
+                </article>
+                <article class="seccion__primera-imagen">
+                    <div class="container-image"><img src="img/foto-about-me-seccion.webp" alt="foto de perfil"
+                            class="image">
+                    </div>
+                </article>
+                <article class="container__titulo">
+                    <h1 class="titulo">Wel-<span class="salto-linia">come</span></h1>
+                </article>
+            </section>
+            <!------------------Seccion Segunda------------>
+            <section class="seccion__presentacion" data-aos="zoom-in-up">
+
+                <article class="container__primero">
+                    <h2 class="seccion__presentacion-nombre">Agnés<span class="salto-linia">Garcia Oltra</span></h2>
+                </article>
+                <article class="container__segundo">
+                    <h2 class="seccion__presentacion-profesion">Graphic & Web<span class="salto-linia">Designer</span></h2>
+                </article>
+            </section>
+            <!--------------------Seccion tercera-------------->
+            <section class="seccion__imagenes" data-aos="zoom-in-up">
+                <div class="seccion__imagenes-container"><img src="img/Lemon-1.webp" alt="logo" class="seccion__image">
+                </div>
+                <div class="seccion__imagenes-container"><img src="img/Lemon-2.webp" alt="logo" class="seccion__image">
+                </div>
+                <div class="seccion__imagenes-container"><img src="img/Lemon-3.webp" alt="logo" class="seccion__image">
+                </div>
+            </section>
+            <!------------------------------Seccion cuarta ----------------->
+            <section class="seccion__sobre-mi" data-aos="zoom-in-up">
+                <h2 class="seccion__sobre-mi-titulo">Sobre mi</h2>
+                <div class="container__presentacion">
+                    <p class="seccion__sobre-mi-presentacion">Me llamo Agnés Garcia, soy una artista valenciana centrada en
+                        el
+                        diseño gráfico, digital y web. Mi pasión me ha llevado a estar en continua formación en este sector
+                        y
+                        estar en constante mira de las últimas tendencias del ámbito, teniendo como referente toda la
+                        cultura
+                        visual que he podido adquirir gracias a mi formación académica como historiadora del arte, así pues
+                        grandes artistas, diseñadores y estudios del ámbito valenciano que conforman el panorama actual.
+                        Daros
+                        la bienvenida a mi web-portfolio, podeis encontrar todos los trabajos de distinta clase enfocados al
+                        diseño gráfico y web. Además os podeís poner en contacto conmigo para cualquier duda, sugerencia o
+                        simplemente para saludar! A que esperas!</p>
+                </div>
+                <div class="button"><a class="link" href="contacto.html">Aquí!</a></div>
+            </section>
+            <!------------------------------Seccion final ----------------->
+            <section class="seccion__ultima" data-aos="zoom-in-up">
+                <div class="container-final">
+                    <h2 class="seccion__presentacion-profesion">Graphic & Web<span class="salto-linia">Designer</span></h2>
+                </div>
+            </section>
+            <!------------------------Subir Arriba -------------------->
+            <div class="arrow-up"><a href="#inicio"><img class="arrow__image" src="img/arrow-up.webp"
+                        alt="flecha hacia arriba"></a>
+            </div>
+        </main>
+        <!-------------------------------- FOOTER--------------------->
+        <footer class="footer">
+            <div class="footer__logo">
+                <img src="img/logo-header.webp" alt="logo en negativo"
+                        class="footer__logo-image">
+            </div>
+            <article class="footer__redes">   
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="https://www.behance.net/agnsgarcia1" class="footer_link"><img
+                                src="img/behance-rosa.webp" alt="icono de behance" class="image"></a></li>
+                    <li class="footer__item"><a href="https://www.instagram.com/odisseart/?hl=es" class="footer_link"><img
+                                src="img/instagram-rosa.webp" alt="icono de instagram" class="image"></a></li>
+                    <li class="footer__item"><a href="https://es.linkedin.com/in/agn%C3%A9s-garcia-oltra-b40042117"
+                            class="footer_link"><img src="img/linkedin-rosa.webp" alt="icono de linkedin" class="image"></a>
+                    </li>
+                    <li class="footer__item"><a href="https://github.com/itaka3000" class="footer_link"><img
+                                src="img/github-rosa.webp" alt="icono de github" class="image"></a></li>
+                </ul>
+            </article>
+            <div class="derechos">
+                <p class="derechos__texto">All rights reserved &copy; 2023 - Agnés Garcia Oltra</p>
+            </div>
+        </footer>
+        <script>
+            AOS.init();
+        </script>
+    </body>
+</html>

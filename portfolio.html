@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Senga - Digital Design</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/touch-icon-ipad-retina.png">
+    <meta name="theme-color" content="#f7aee5">
+    <meta name="author" content="Agnés Garcia">
+    <meta name="keywords" content="html, css, javascript, sass, alpinejs, minimalista, diseño, portfolio">
+    <meta name="description" content="Portfolio web de diseño grafico y web">
+    <meta property="og:image" content="img/miniatura.png">
+    <meta property="og:title" content="Senga">
+    <meta property="og:type" content="website">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="300">
+    <meta property="og:image:alt" content="We are digital design">
+    <!--------------------------------------CSS-------------------------->
+    <link href="css/mobile.css" rel="stylesheet" media="all and (max-width: 600px)">
+    <link href="css/desktop.css" rel="stylesheet" media="all and (min-width: 601px)">
+    <!-------------------------NORMALIZE-------------------------->
+    <link href="sass/vendors/_normalize.css" rel="stylesheet">
+    <!-------------------------------FUENTES----------------------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!----------------------------ALPINEJS----------------------------->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+  <!--------------------------------BODY ------------------------------------------->
+  <body>
+    <!--------------------------------HEADER ------------------------------------->
+    <header x-data="{ open: false }" class="header">
+      <!--LOGO pulsable-->
+      <div class="header__logo">
+        <a href="index.html" class="logo__link"><img src="img/logo-header.webp" alt="logo en negativo"
+            class="header__logo-image"></a>
+      </div>
+      <!-- Boton abrir -->
+      <button class="header__button-nav--open" @click="open = true"><img src="img/menu-hamburger-abierto.webp"
+          alt="open menu" class="nav__imagen"></button>
+      <!-- Navegador -->
+      <nav class="nav" x-bind:class="open ? 'nav--show' : ''">
+        <!-- Boton cerrar -->
+        <div class="nav__button" @click="open = false">
+          <button class="header__button-nav--close"><img src="img/menu-hamburger-cerrar.webp" alt="close menu"
+              class="nav__imagen"></button>
+        </div>
+        <!-- Menu -->
+        <ul class="nav__ul animacion">
+          <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="portfolio.html" class="nav__link">Portfolio</a></li>
+          <li class="nav__item"><a href="sobre-mi.html" class="nav__link">Sobre mi</a></li>
+          <li class="nav__item"><a href="contacto.html" class="nav__link">Contacto</a></li>
+        </ul>
+      </nav>
+      <!-- Fin Navegador -->
+    </header>
+    <main x-data="{'imagenFull' : null}">
+      <!-----------------------MENU ANCLA ---------------->
+      <section class="portfolio__menu" id="portfolio__menu">
+        <nav class="portfolio__nav">
+          <ul class="portfolio__ul">
+            <li class="portfolio__item"><a href="#portfolio__branding" class="portfolio__link">Branding</a></li>
+            <li class="portfolio__item"><a href="#portfolio__carteleria" class="portfolio__link">Cartelería</a></li>
+            <li class="portfolio__item"><a href="#portfolio__ilustracion" class="portfolio__link">Ilustración</a></li>
+            <li class="portfolio__item"><a href="#portfolio__edicion-fotomontaje" class="portfolio__link">Edición &
+                Fotomontaje</a></li>
+            <li class="portfolio__item"><a href="#portfolio__packaging" class="portfolio__link">Packaging, editorial &
+                web</a></li>
+          </ul>
+        </nav>
+      </section>
+      <!--------------------------Seccion Primera----------------------->
+      <section class="portfolio__branding">
+        <h2 class="branding__titulo" id="portfolio__branding">Branding</h2>
+          <!---Primera imagen de branding-->
+          <article class="branding__imagen-primera" x-bind:class="imagenFull == 0 ? 'emphasized' : ''">
+            <div class="container__image-portfolio"><img class="image-portfolio" src="img/branding.webp" alt="imagen">
+            </div>
+            <div class="efecto">
+              <button class="boton-branding" x-on:click="imagenFull !== 0 ? imagenFull = 0 : imagenFull = null">Ver imagen
+                completa!</button>
+            </div>
+            <div class="portfolio modal" x-bind:class="imagenFull == 0 ? 'modal--show' : ''">
+              <div class="container__portfolio-orden" x-show="imagenFull == 0">
+                <img class="imagen__completa" src="img/branding.webp" alt="imagen">
+                <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+              </div>
+            </div>
+          </article>
+          <!---Segunda imagen de branding-->
+          <article class="branding__imagen-segunda" x-bind:class="imagenFull == 1 ? 'emphasized' : ''">
+            <div class="container__image-portfolio"><img class="image-portfolio" src="img/branding-cartel.webp"
+                alt="imagen">
+            </div>
+            <div class="efecto">
+              <button class="boton-branding" x-on:click="imagenFull !== 1 ? imagenFull = 1 : imagenFull = null">Ver imagen
+                completa!</button>
+            </div>
+            <div class="portfolio modal" x-bind:class="imagenFull == 1 ? 'modal--show' : ''">
+              <div class="container__portfolio-orden" x-show="imagenFull == 1">
+                <img class="imagen__completa" src="img/branding-cartel.webp" alt="imagen">
+                <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+              </div>
+            </div>
+          </article>
+          <!---Tercera imagen de branding-->
+          <article class="branding__imagen-tercera" x-bind:class="imagenFull == 2 ? 'emphasized' : ''">
+            <div class="container__image-portfolio"><img class="image-portfolio" src="img/senga.webp" alt="imagen">
+            </div>
+            <div class="efecto">
+              <button class="boton-branding" x-on:click="imagenFull !== 2 ? imagenFull = 2 : imagenFull = null">Ver imagen
+                completa!</button>
+            </div>
+            <div class="portfolio modal" x-bind:class="imagenFull == 2 ? 'modal--show' : ''">
+              <div class="container__portfolio-orden" x-show="imagenFull == 2">
+                <img class="imagen__completa" src="img/senga.webp" alt="imagen">
+                <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+              </div>
+            </div>
+          </article>
+          <!---Cuarta imagen de branding-->
+          <article class="branding__imagen-cuarta" x-bind:class="imagenFull == 3 ? 'emphasized' : ''">
+            <div class="container__image-portfolio"><img class="image-portfolio" src="img/rebranding.webp" alt="imagen">
+            </div>
+            <div class="efecto">
+              <button class="boton-branding" x-on:click="imagenFull !== 3 ? imagenFull = 3 : imagenFull = null">Ver imagen
+                completa!</button>
+            </div>
+            <div class="portfolio modal" x-bind:class="imagenFull == 3 ? 'modal--show' : ''">
+              <div class="container__portfolio-orden" x-show="imagenFull == 3">
+                <img class="imagen__completa" src="img/rebranding.webp" alt="imagen">
+                <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+              </div>
+            </div>
+          </article>
+          <!---Quinta imagen de branding-->
+          <article class="branding__imagen-quinta" x-bind:class="imagenFull == 4 ? 'emphasized' : ''">
+            <div class="container__image-portfolio"><img class="image-portfolio" src="img/spotify-papeleria.webp"
+                alt="imagen">
+            </div>
+            <div class="efecto">
+              <button class="boton-branding" x-on:click="imagenFull !== 4 ? imagenFull = 4 : imagenFull = null">Ver imagen
+                completa!</button>
+            </div>
+            <div class="portfolio modal" x-bind:class="imagenFull == 4 ? 'modal--show' : ''">
+              <div class="container__portfolio-orden" x-show="imagenFull == 4">
+                <img class="imagen__completa" src="img/spotify-papeleria.webp" alt="imagen">
+                <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+              </div>
+            </div>
+          </article>
+          <!---Sexta imagen de branding-->
+          <article class="branding__imagen-sexta" x-bind:class="imagenFull == 5 ? 'emphasized' : ''">
+            <div class="container__image-portfolio"><img class="image-portfolio" src="img/spotify-redes.webp"
+                alt="imagen">
+            </div>
+            <div class="efecto">
+              <button class="boton-branding" x-on:click="imagenFull !== 5 ? imagenFull = 5 : imagenFull = null">Ver imagen
+                completa!</button>
+            </div>
+            <div class="portfolio modal" x-bind:class="imagenFull == 5 ? 'modal--show' : ''">
+              <div class="container__portfolio-orden" x-show="imagenFull == 5">
+                <img class="imagen__completa" src="img/spotify-redes.webp" alt="imagen">
+                <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+              </div>
+            </div>
+          </article>
+      </section>
+      <!--------------------------Seccion Segunda----------------------->
+      <section class="portfolio__carteleria">
+        <h1 class="carteleria__titulo" id="portfolio__carteleria">Cartelería</h1>
+        <!---Primera imagen de carteleria-->
+        <article class="carteleria__imagen-primera" x-bind:class="imagenFull == 6 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/8-de-Març.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-carteleria" x-on:click="imagenFull !== 6 ? imagenFull = 6 : imagenFull = null">Ver imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 6 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 6">
+              <img class="imagen__completa" src="img/8-de-Març.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---Segunda imagen de carteleria-->
+        <article class="carteleria__imagen-segunda" x-bind:class="imagenFull == 7 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/Lluita.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-carteleria" x-on:click="imagenFull !== 7 ? imagenFull = 7 : imagenFull = null">Ver imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 7 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 7">
+              <img class="imagen__completa" src="img/Lluita.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---Tercera imagen de carteleria-->
+        <article class="carteleria__imagen-tercera" x-bind:class="imagenFull == 8 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/Feminisme.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-carteleria" x-on:click="imagenFull !== 8 ? imagenFull = 8 : imagenFull = null">Ver imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 8 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 8">
+              <img class="imagen__completa" src="img/Feminisme.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---Cuarta imagen de carteleria-->
+        <article class="carteleria__imagen-cuarta" x-bind:class="imagenFull == 9 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/CartellDiaDeLaDona.webp"
+              alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-carteleria" x-on:click="imagenFull !== 9 ? imagenFull = 9 : imagenFull = null">Ver imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 9 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 9">
+              <img class="imagen__completa" src="img/CartellDiaDeLaDona.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---Quinta imagen de carteleria-->
+        <article class="carteleria__imagen-quinta" x-bind:class="imagenFull == 10 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/MesIgualtat.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-carteleria" x-on:click="imagenFull !== 10 ? imagenFull = 10 : imagenFull = null">Ver
+              imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 10 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 10">
+              <img class="imagen__completa" src="img/MesIgualtat.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---Sexta imagen de carteleria-->
+        <article class="carteleria__imagen-sexta" x-bind:class="imagenFull == 11 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/cartel-art.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-carteleria" x-on:click="imagenFull !== 11 ? imagenFull = 11 : imagenFull = null">Ver
+              imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 11 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 11">
+              <img class="imagen__completa" src="img/cartel-art.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---Septima imagen de carteleria-->
+        <article class="carteleria__imagen-septima" x-bind:class="imagenFull == 12 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/lionking-cartel1.webp"
+              alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-carteleria" x-on:click="imagenFull !== 12 ? imagenFull = 12 : imagenFull = null">Ver
+              imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 12 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 12">
+              <img class="imagen__completa" src="img/lionking-cartel1.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---Octava imagen de carteleria-->
+        <article class="carteleria__imagen-octava" x-bind:class="imagenFull == 13 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/lionking-cartel2.webp"
+              alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-carteleria" x-on:click="imagenFull !== 13 ? imagenFull = 13 : imagenFull = null">Ver
+              imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 13 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 13">
+              <img class="imagen__completa" src="img/lionking-cartel2.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---Novena imagen de carteleria-->
+        <article class="carteleria__imagen-novena" x-bind:class="imagenFull == 14 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/wonderland.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-carteleria" x-on:click="imagenFull !== 14 ? imagenFull = 14 : imagenFull = null">Ver
+              imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 14 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 14">
+              <img class="imagen__completa" src="img/wonderland.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+      </section>
+      <!--------------------------Seccion Tercera----------------------->
+      <section class="portfolio__ilustracion">
+        <h2 class="ilustracion__titulo" id="portfolio__ilustracion">Ilustración</h2>
+        <!---Primera imagen de ilustracion-->
+        <article class="ilustracion__imagen-primera" x-bind:class="imagenFull == 15 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/Lemon-1.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-ilustracion" x-on:click="imagenFull !== 15 ? imagenFull = 15 : imagenFull = null">Ver
+              imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 15 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 15">
+              <img class="imagen__completa" src="img/Lemon-1.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---Segunda imagen de ilustracion-->
+        <article class="ilustracion__imagen-segunda" x-bind:class="imagenFull == 15 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/catlover.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-ilustracion" x-on:click="imagenFull !== 16 ? imagenFull = 16 : imagenFull = null">Ver
+              imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 16 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 16">
+              <img class="imagen__completa" src="img/catlover.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---Tercera imagen de ilustracion-->
+        <article class="ilustracion__imagen-tercera" x-bind:class="imagenFull == 17 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/Lemon-2.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-ilustracion" x-on:click="imagenFull !== 17 ? imagenFull = 17 : imagenFull = null">Ver
+              imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 17 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 17">
+              <img class="imagen__completa" src="img/Lemon-2.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---Cuarta imagen de ilustracion-->
+        <article class="ilustracion__imagen-cuarta" x-bind:class="imagenFull == 18 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/Lemon-3.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-ilustracion" x-on:click="imagenFull !== 18 ? imagenFull = 18 : imagenFull = null">Ver
+              imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 18 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 18">
+              <img class="imagen__completa" src="img/Lemon-3.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---Quinta imagen de ilustracion-->
+        <article class="ilustracion__imagen-quinta" x-bind:class="imagenFull == 19 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/doglover.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-ilustracion" x-on:click="imagenFull !== 19 ? imagenFull = 19 : imagenFull = null">Ver
+              imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 19 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 19">
+              <img class="imagen__completa" src="img/doglover.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---sexta imagen de ilustracion-->
+        <article class="ilustracion__imagen-sexta" x-bind:class="imagenFull == 20 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/Lemon-4.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-ilustracion" x-on:click="imagenFull !== 20 ? imagenFull = 20 : imagenFull = null">Ver
+              imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 20 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 20">
+              <img class="imagen__completa" src="img/Lemon-4.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---Septima imagen de ilustracion-->
+        <article class="ilustracion__imagen-septima" x-bind:class="imagenFull == 21 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/Adventure.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-ilustracion" x-on:click="imagenFull !== 21 ? imagenFull = 21 : imagenFull = null">Ver
+              imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 21 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 21">
+              <img class="imagen__completa" src="img/Adventure.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---Octava imagen de ilustracion-->
+        <article class="ilustracion__imagen-octava" x-bind:class="imagenFull == 22 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/planet-b.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-ilustracion" x-on:click="imagenFull !== 22 ? imagenFull = 22 : imagenFull = null">Ver
+              imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 22 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 22">
+              <img class="imagen__completa" src="img/planet-b.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---Novena imagen de ilustracion-->
+        <article class="ilustracion__imagen-novena" x-bind:class="imagenFull == 23 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/Sant-Jordi.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-ilustracion" x-on:click="imagenFull !== 23 ? imagenFull = 23 : imagenFull = null">Ver
+              imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 23 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 23">
+              <img class="imagen__completa" src="img/Sant-Jordi.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+      </section>
+      <!--------------------------Seccion Cuarta----------------------->
+      <section class="portfolio__edicion">
+        <h2 class="edicion__titulo" id="portfolio__edicion-fotomontaje">Edicion & Fotomontaje</h2>
+        <!---Primera imagen de edicion y fotomontaje-->
+        <article class="edicion__imagen-primera" x-bind:class="imagenFull == 24 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/Cartel-3.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-edicion" x-on:click="imagenFull !== 24 ? imagenFull = 24 : imagenFull = null">Ver imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 24 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 24">
+              <img class="imagen__completa" src="img/Cartel-3.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---Segunda imagen de edicion y fotomontaje-->
+        <article class="edicion__imagen-segunda" x-bind:class="imagenFull == 25 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/cartel-4.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-edicion" x-on:click="imagenFull !== 25 ? imagenFull = 25 : imagenFull = null">Ver imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 25 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 25">
+              <img class="imagen__completa" src="img/cartel-4.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---Tercera imagen de edicion y fotomontaje-->
+        <article class="edicion__imagen-tercera" x-bind:class="imagenFull == 26 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/Cartel-3-version2.webp"
+              alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-edicion" x-on:click="imagenFull !== 26 ? imagenFull = 26 : imagenFull = null">Ver imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 26 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 26">
+              <img class="imagen__completa" src="img/Cartel-3-version2.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---Cuarta imagen de edicion y fotomontaje-->
+        <article class="edicion__imagen-cuarta" x-bind:class="imagenFull == 27 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/Fondo-1.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-edicion" x-on:click="imagenFull !== 27 ? imagenFull = 27 : imagenFull = null">Ver imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 27 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 27">
+              <img class="imagen__completa" src="img/Fondo-1.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---Quinta imagen de edicion y fotomontaje-->
+        <article class="edicion__imagen-quinta" x-bind:class="imagenFull == 28 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/Fondo-4.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-edicion" x-on:click="imagenFull !== 28 ? imagenFull = 28 : imagenFull = null">Ver imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 28 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 28">
+              <img class="imagen__completa" src="img/Fondo-4.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---Sexta imagen de edicion y fotomontaje-->
+        <article class="edicion__imagen-sexta" x-bind:class="imagenFull == 29 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/Fondo-2.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-edicion" x-on:click="imagenFull !== 29 ? imagenFull = 29 : imagenFull = null">Ver imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 29 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 29">
+              <img class="imagen__completa" src="img/Fondo-2.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+      </section>
+      <!--------------------------Seccion Quinta----------------------->
+      <section class="portfolio__packaging">
+        <h2 class="packaging__titulo" id="portfolio__packaging">Packaging, editorial & Web </h2>
+        <!---Primera imagen de packaging-->
+        <article class="packaging__imagen-primera" x-bind:class="imagenFull == 30 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/Packaging-caja.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-packaging" x-on:click="imagenFull !== 30 ? imagenFull = 30 : imagenFull = null">Ver
+              imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 30 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 30">
+              <img class="imagen__completa" src="img/Packaging-caja.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---Segunda imagen de packaging-->
+        <article class="packaging__imagen-segunda" x-bind:class="imagenFull == 31 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/packaging-cd.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-packaging" x-on:click="imagenFull !== 31 ? imagenFull = 31 : imagenFull = null">Ver
+              imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 31 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 31">
+              <img class="imagen__completa" src="img/packaging-cd.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---Tercera imagen de packaging-->
+        <article class="packaging__imagen-tercera" x-bind:class="imagenFull == 32 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/diptico.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-packaging" x-on:click="imagenFull !== 32 ? imagenFull = 32 : imagenFull = null">Ver
+              imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 32 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 32">
+              <img class="imagen__completa" src="img/diptico.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+        <!---Cuarta imagen de packaging-->
+        <article class="packaging__imagen-cuarta" x-bind:class="imagenFull == 33 ? 'emphasized' : ''">
+          <div class="container__image-portfolio"><img class="image-portfolio" src="img/web-design.webp" alt="imagen">
+          </div>
+          <div class="efecto">
+            <button class="boton-packaging" x-on:click="imagenFull !== 33 ? imagenFull = 33 : imagenFull = null">Ver
+              imagen
+              completa!</button>
+          </div>
+          <div class="portfolio modal" x-bind:class="imagenFull == 33 ? 'modal--show' : ''">
+            <div class="container__portfolio-orden" x-show="imagenFull == 33">
+              <img class="imagen__completa" src="img/web-design.webp" alt="imagen">
+              <div class="aspa__centrar"><button class="aspa" x-on:click="imagenFull = null">X</button></div>
+            </div>
+          </div>
+        </article>
+      </section>
+      <!------------------------------Seccion final ----------------->
+      <section class="seccion__ultima-portfolio">
+        <div class="container-final">
+          <h2 class="seccion__presentacion-profesion">Graphic & Web<span class="salto-linia">Designer</span></h2>
+        </div>
+      </section>
+  <!------------------------Subir Arriba -------------------->
+      <div class="arrow-up"><a href="#portfolio__menu"><img class="arrow__image" src="img/arrow-up.webp" alt="flecha hacia arriba"></a>
+      </div>
+    </main>
+    <!-------------------------------- FOOTER--------------------->
+    <footer class="footer">
+        <div class="footer__logo">
+            <img src="img/logo-header.webp" alt="logo en negativo"
+                    class="footer__logo-image">
+        </div>
+        <article class="footer__redes">   
+            <ul class="footer__list">
+                <li class="footer__item"><a href="https://www.behance.net/agnsgarcia1" class="footer_link"><img
+                            src="img/behance-rosa.webp" alt="icono de behance" class="image"></a></li>
+                <li class="footer__item"><a href="https://www.instagram.com/odisseart/?hl=es" class="footer_link"><img
+                            src="img/instagram-rosa.webp" alt="icono de instagram" class="image"></a></li>
+                <li class="footer__item"><a href="https://es.linkedin.com/in/agn%C3%A9s-garcia-oltra-b40042117"
+                        class="footer_link"><img src="img/linkedin-rosa.webp" alt="icono de linkedin" class="image"></a>
+                </li>
+                <li class="footer__item"><a href="https://github.com/itaka3000" class="footer_link"><img
+                            src="img/github-rosa.webp" alt="icono de github" class="image"></a></li>
+            </ul>
+        </article>
+        <div class="derechos">
+            <p class="derechos__texto">All rights reserved &copy; 2023 - Agnés Garcia Oltra</p>
+        </div>
+    </footer>
+  </body>
+</html>
